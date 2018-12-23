@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 
             if (loginUser.userName === regUse.userName &&
                 loginUser.loginPwd === regUse.loginPwd) {
-                res.redirect('/');
+                res.redirect('/chat');
             } else {
                 res.send("密码错误！！！");
             }
@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
         res.send("用户没有注册!");
     }
 
-    console.log(req.body.userName);
-    console.log(req.body.loginPwd);
+    //console.log(req.body.userName);
+    //console.log(req.body.loginPwd);
 });
 module.exports = router;
