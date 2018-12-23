@@ -1,5 +1,6 @@
 let express = require('express');
 let router = express.Router();
+let util = require("./../utils/utils")
 
 /* GET register page. */
 router.get('/', function(req, res, next) {
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 // 定义用户数组
-let users = [];
+let users = util.users;
 
 router.post('/', function(req, res, next) {
     // 获取前端传过来的数据
@@ -21,7 +22,7 @@ router.post('/', function(req, res, next) {
     }
 
     // 验证用户是否已经注册
-    let user = isReg(regUser);
+    let user = util.isReg(regUser, users);
     if (user === null || user === undefined){
         users.push(regUser);
         //res.send("用户注册成功！");
