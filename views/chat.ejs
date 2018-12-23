@@ -64,7 +64,9 @@
 
     $("#btn_close").on("click", ()=>{
         socket.disconnect(true);
-        window.location.href = './index.ejs';
+
+	    window.location.href = './index.ejs';
+
     });
 
     // 5. 处理回车
