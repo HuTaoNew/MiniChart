@@ -30,6 +30,8 @@ router.post('/', function(req, res, next) {
             if (loginUser.userName === regUse.userName &&
                 loginUser.loginPwd === regUse.loginPwd) {
                 res.redirect('/');
+            } else {
+                res.send("密码错误！！！");
             }
         }
     } else {
